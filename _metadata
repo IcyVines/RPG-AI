@@ -1,0 +1,9 @@
+{
+  "author" : "IcyVines",
+  "description" : "Improves Vanilla Monster AI.",
+  "friendlyName" : "RPG AI",
+  "requires" : ["RPG_Growth"],
+  "name" : "RPG_Growth_AI",
+  "priority" : 9999,
+  "version" : "1"
+}

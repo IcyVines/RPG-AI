@@ -1,0 +1,57 @@
+[ 
+	{ 
+		"op" : "replace", 
+		"path" : "/baseParameters/movementSettings/flySpeed", 
+		"value" : 24 // Normally 18
+	},
+	{ 
+		"op" : "replace", 
+		"path" : "/baseParameters/movementSettings/liquidFriction", 
+		"value" : 2.0 // Normally 2.0
+	},
+	{ 
+		"op" : "replace", 
+		"path" : "/baseParameters/movementSettings/liquidForce", 
+		"value" : 200.0 // Normally 150.0
+	},
+	{ 
+		"op" : "replace", 
+		"path" : "/baseParameters/directionChangeCooldown", 
+		"value" : 0.5 // Normally 1.0
+	},
+	{ 
+		"op" : "replace", 
+		"path" : "/baseParameters/targetSearchRadius", 
+		"value" : 30 // Normally 15
+	},
+	{ 
+		"op" : "replace", 
+		"path" : "/baseParameters/targetHoldRadius", 
+		"value" : 60 // Normally 40
+	},
+	{ 
+		"op" : "replace", 
+		"path" : "/baseParameters/attackStartDistance", 
+		"value" : 8 // Normally 12
+	},
+	{ 
+		"op" : "replace", 
+		"path" : "/baseParameters/attackApproachTime", 
+		"value" : 3.0 // Normally 3.0
+	},
+	{ 
+		"op" : "replace", 
+		"path" : "/baseParameters/attackWindupTime", 
+		"value" : 1.0 // Normally 1.0
+	},
+	{ 
+		"op" : "replace", 
+		"path" : "/baseParameters/attackChargeTime", 
+		"value" : 0.6 // Normally 1.2
+	},
+	{ 
+		"op" : "replace", 
+		"path" : "/baseParameters/attackChargeSpeed", 
+		"value" : 90 // Normally 60
+	}
+]
