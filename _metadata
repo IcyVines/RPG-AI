@@ -1,9 +1,12 @@
 {
   "author" : "IcyVines",
-  "description" : "Improves Vanilla Monster AI.",
-  "friendlyName" : "RPG AI",
-  "requires" : ["RPG_Growth"],
+  "description" : "[h1]How RPG Growth: AI works:[/h1]\n[list]\n[*]Flying and Swimming Monsters can now dash out of the way of incoming projectiles every 3 seconds.\n[*]Walking Monsters can now jump out of the way of incoming projectiles every 3 seconds.\n[*]Swimming Monsters are faster and track from double the distance.\n[/list]\nCurrently in version 1.0, or BETA.\n\n[h1]RPG Growth[/h1]\nThis mod requires RPG Growth to function.\n\nRPG Growth adds a ton of features, like experience, stats, classes, professions, weapons, techs, and more. The cool Bow, functional stealth, and yellow-bordered weapons featured in the video are all part of RPG Growth.\nhttps://steamcommunity.com/sharedfiles/itemedittext/?id=1115920474\n\n[h1]Discord and Patreon[/h1]\nIf you would like to join our Discord server to discuss the mod or have fun, please do!\nLink: https://discord.gg/YUDq6pw\n\nIf you would like to donate to my Patreon, visit here: https://www.patreon.com/IcyVines\nDonating grants access to the Veteran role on the Discord server, and higher tiers enable you to request a personal weapon, but the fact that you enjoy my mod enough to donate makes me happy, too! :)",
+  "friendlyName" : "RPG Growth: AI",
+  "link" : "steam://url/CommunityFilePage/1950914592",
   "name" : "RPG_Growth_AI",
   "priority" : 9999,
-  "version" : "1"
+  "requires" : ["RPG_Growth"],
+  "steamContentId" : "1950914592",
+  "tags" : "NPCs and Creatures|Mechanics",
+  "version" : "1.0"
 }
