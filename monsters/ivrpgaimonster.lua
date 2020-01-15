@@ -6,8 +6,8 @@ function initAI()
   self.rpg_dashDirection = {}
   self.rpg_excludeList = root.assetJson("/ivrpgExcludeMonsterAI.config")
   self.rpg_specialList = root.assetJson("/ivrpgMonsterAI.config")
-  self.rpg_specialAction = self.rpg_specialList[self.enemyType] or "default"
-  if not self.rpg_excludeList[self.enemyType] then script.setUpdateDelta(1) end
+  self.rpg_specialAction = self.rpg_specialList[self.rpg_enemyType] or "default"
+  if not self.rpg_excludeList[self.rpg_enemyType] then script.setUpdateDelta(1) end
 end
 
 function updateAI(dt)
@@ -29,7 +29,7 @@ function updateAI(dt)
 	end
 	--]]
 
-	if self.rpg_excludeList[self.enemyType] then return end
+	if self.rpg_excludeList[self.rpg_enemyType] then return end
 	--Dodge Incoming Projectiles
 	local facingDirection = mcontroller.facingDirection()
 	if self.rpg_jumpDodgeTimer > 0 then
@@ -84,7 +84,7 @@ function dodgeProjectiles()
 		for _,pId in ipairs(enemyProjectiles) do
 			local pPos = world.entityPosition(pId)
 			local distance = world.distance(pPos, mcontroller.position())
-			if world.entityCanDamage(pId, self.rpg_ID) and operate((facingDirection == -1 and "<" or ">"), distance[1], 0) and not world.lineTileCollision(mcontroller.position(), pPos, {"Block", "Slippery", "Dynamic"}) then
+			if world.entityCanDamage(pId, self.rpg_Id) and operate((facingDirection == -1 and "<" or ">"), distance[1], 0) and not world.lineTileCollision(mcontroller.position(), pPos, {"Block", "Slippery", "Dynamic"}) then
 				local pVel = nil
 				if self.rpg_enemyProjectiles[pId] then
 					pVel = world.distance(pPos, self.rpg_enemyProjectiles[pId])
