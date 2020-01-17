@@ -1,4 +1,4 @@
-function initAI()
+function rpg_initAI()
   self.rpg_enemyProjectiles = {}
   self.rpg_actionCooldown = 0
   self.rpg_jumpDodgeTimer = 0
@@ -10,7 +10,7 @@ function initAI()
   if not self.rpg_excludeList[self.rpg_enemyType] then script.setUpdateDelta(1) end
 end
 
-function updateAI(dt)
+function rpg_updateAI(dt)
   --Advanced AI - Added for Corrupted and Demonic enemies.
   --[[
   if #self.rpg_players > 0 then
@@ -53,11 +53,11 @@ function updateAI(dt)
       self.rpg_actionCooldown = 3
     end
   elseif self.rpg_actionCooldown == 0 then
-    dodgeProjectiles()
+    rpg_dodgeProjectiles()
   end
 
   self.rpg_actionCooldown = math.max(self.rpg_actionCooldown - dt, 0)
-  purgeEnemyProjectiles()
+  rpg_purgeEnemyProjectiles()
 
 end
 
@@ -75,7 +75,7 @@ function getProjectilesFromList(list)
 end
 --]]
 
-function dodgeProjectiles()
+function rpg_dodgeProjectiles()
   local facingDirection = mcontroller.facingDirection()
   -- Rectangle Search - Obsolete
   -- {mcontroller.xPosition() - (facingDirection == -1 and 10 or 0), mcontroller.yPosition() - 10}, {mcontroller.xPosition() - (facingDirection == -1 and 0 or 10), mcontroller.yPosition() + 10}
@@ -116,7 +116,7 @@ function dodgeProjectiles()
   end
 end
 
-function purgeEnemyProjectiles()
+function rpg_purgeEnemyProjectiles()
   for pId,pos in pairs(self.rpg_enemyProjectiles) do
     if not world.entityExists(pId) then
       self.rpg_enemyProjectiles[pId] = nil
