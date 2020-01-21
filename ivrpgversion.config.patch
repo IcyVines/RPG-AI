@@ -1,10 +1,10 @@
 [
   { "op" : "replace",
-    "path" : "/RPGAIversion",
-    "value" : "BETA"
+    "path" : "/RPGAI_version",
+    "value" : "1.1"
   },
   { "op" : "replace",
-    "path" : "/RPGAItext",
+    "path" : "/RPGAI_text",
     "value" : "
 
 Grounded Monsters can dodge incoming projectiles by jumping. In order to do so, they must be facing the projectile. These Jump Dodges have a cooldown of 3 seconds.
@@ -13,5 +13,9 @@ Flying and Swimming Monsters can dodge incoming projectiles by dashing perpendic
 
 Swimming Monsters have been improved in various ways, namely: Speed, Force, Direction Change Cooldown, and Target Search and Hold Radius.
 "
+  },
+  { "op" : "replace",
+    "path" : "/RPGAI_refactorVersion",
+    "value" : 1.1
   }
 ]
