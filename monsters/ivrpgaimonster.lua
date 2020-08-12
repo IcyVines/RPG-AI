@@ -87,7 +87,7 @@ function rpg_dodgeProjectiles()
     for _,pId in ipairs(enemyProjectiles) do
       local pPos = world.entityPosition(pId)
       local distance = world.distance(pPos, mcontroller.position())
-      if world.entityCanDamage(pId, self.rpg_Id) and operate((facingDirection == -1 and "<" or ">"), distance[1], 0) and not world.lineTileCollision(mcontroller.position(), pPos, {"Block", "Slippery", "Dynamic"}) then
+      if world.entityExists(pId) and world.entityCanDamage(pId, self.rpg_Id) and world.entityDamageTeam(pId)["type"] ~= "environment" and operate((facingDirection == -1 and "<" or ">"), distance[1], 0) and not world.lineTileCollision(mcontroller.position(), pPos, {"Block", "Slippery", "Dynamic"}) then
         local pVel = nil
         if self.rpg_enemyProjectiles[pId] then
           pVel = world.distance(pPos, self.rpg_enemyProjectiles[pId])
