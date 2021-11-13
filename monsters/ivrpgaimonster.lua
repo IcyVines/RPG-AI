@@ -7,6 +7,7 @@ function rpg_initAI()
   self.rpg_excludeList = root.assetJson("/ivrpgExcludeMonsterAI.config")
   self.rpg_specialList = root.assetJson("/ivrpgMonsterAI.config")
   self.rpg_specialAction = self.rpg_specialList[self.rpg_enemyType] or "default"
+  self.rpg_originalFacingDirection = mcontroller.facingDirection()
   if not self.rpg_excludeList[self.rpg_enemyType] then script.setUpdateDelta(1) end
 end
 
@@ -36,9 +37,10 @@ function rpg_updateAI(dt)
   if self.rpg_jumpDodgeTimer > 0 then
     if self.rpg_jumpDodgeTimer == 0.5 then
       mcontroller.controlJump()
+      self.rpg_originalFacingDirection = facingDirection
     end
     self.rpg_jumpDodgeTimer = math.max(0, self.rpg_jumpDodgeTimer - dt)
-    if not mcontroller.groundMovement() then mcontroller.controlApproachXVelocity(facingDirection * 25, 500) end
+    if not mcontroller.groundMovement() then mcontroller.controlApproachXVelocity(self.rpg_originalFacingDirection * 25, 500) end
     if self.rpg_jumpDodgeTimer == 0 then
       self.rpg_actionCooldown = 3
     end
@@ -105,7 +107,7 @@ function rpg_dodgeProjectiles()
           if not vec2.eq(predictedPos, mcontroller.position()) then
             if mcontroller.groundMovement() and self.rpg_specialAction ~= "nojump" then
               self.rpg_jumpDodgeTimer = 0.5
-            elseif ((pVel[2] < 0 and distance[2] > 0) or (pVel[2] > 0 and distance[2] < 0)) then
+            elseif ((pVel[2] < 0 and distance[2] > 0) or (pVel[2] > 0 and distance[2] < 0)) and (self.rpg_specialAction == "stop" or self.rpg_specialAction == "nojump") then
               self.rpg_dashTimer = 0.1
               self.rpg_dashDirection = vec2.norm(vec2.rotate(pVel, math.pi/2))
             end

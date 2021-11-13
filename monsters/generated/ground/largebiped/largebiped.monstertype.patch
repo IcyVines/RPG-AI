@@ -1,0 +1,4 @@
+[
+	{ "op" : "replace", "path" : "/baseParameters/movementSettings/collisionPoly", "value" : [ [-0.8, -2.2], [-0.4, -2.6], [0.4, -2.6], [0.8, -2.2], [0.8, 0.4], [0.4, 1], [-0.4, 1], [-0.8, 0.4] ] },
+	{ "op" : "replace", "path" : "/baseParameters/touchDamage/poly", "value" : [ [-0.8, -2.2], [-0.4, -2.6], [0.4, -2.6], [0.8, -2.2], [0.8, 0.4], [0.4, 1], [-0.4, 1], [-0.8, 0.4] ] }
+]
